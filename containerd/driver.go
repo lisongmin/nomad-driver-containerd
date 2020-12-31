@@ -39,15 +39,6 @@ import (
 )
 
 const (
-	// PluginName is the name of the plugin
-	// this is used for logging and (along with the version) for uniquely
-	// identifying plugin binaries fingerprinted by the client
-	PluginName = "containerd-driver"
-
-	// PluginVersion allows the client to identify and use newer versions of
-	// an installed plugin
-	PluginVersion = "v0.6.0"
-
 	// fingerprintPeriod is the interval at which the plugin will send
 	// fingerprint responses
 	fingerprintPeriod = 30 * time.Second
@@ -60,6 +51,15 @@ const (
 )
 
 var (
+	// PluginName is the name of the plugin
+	// this is used for logging and (along with the version) for uniquely
+	// identifying plugin binaries fingerprinted by the client
+	PluginName = "containerd-driver"
+
+	// PluginVersion allows the client to identify and use newer versions of
+	// an installed plugin
+	PluginVersion = "v0.6.0"
+
 	// pluginInfo describes the plugin
 	pluginInfo = &base.PluginInfoResponse{
 		Type:              base.PluginTypeDriver,
