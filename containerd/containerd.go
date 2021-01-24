@@ -69,10 +69,6 @@ func (d *Driver) pullImage(imageName string) (containerd.Image, error) {
 }
 
 func (d *Driver) createContainer(containerConfig *ContainerConfig, config *TaskConfig) (containerd.Container, error) {
-	if config.Command == "" && len(config.Args) > 0 {
-		return nil, fmt.Errorf("Command is empty. Cannot set --args without --command.")
-	}
-
 	// Command set by the user, to override entrypoint or cmd defined in the image.
 	var args []string
 	if config.Command != "" {
